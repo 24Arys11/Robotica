@@ -1,5 +1,3 @@
-// NOT FINISHED YET !
-
 #include <LiquidCrystal.h> // includes the LiquidCrystal Library
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
@@ -23,11 +21,13 @@ int stateSW = 0;
 int lives = 3;
 int level = 1;
 int score = 0;
+int maxScore = 0;
 int maxLevel = 99;
+int levelDelay = 2000;
 
-void startGame(int level){
+void startGame(int level, int &maxScore){
   int i;
-  for(i = 0; i < gameDuration; i++){
+  for(i = 0; i < gameDuration; i = i + (levelDelay / 1000)){
     lcd.setCursor(0,0);
     lcd.print("Lives: ");
     lcd.print(lives);
@@ -38,20 +38,24 @@ void startGame(int level){
     lcd.print("Score: ");
     lcd.print(score);
     lcd.print("        ");
-    delay(2000);
-    level++;
+    delay(levelDelay);
+    level++; // We won't modify the starting level, only a copy of it, because we haven't passed level by reference !
   }
+  if (score > maxScore){
+    maxScore = score;
+  }
+  wasClicked = 1;
   while(1){
     // printing
     lcd.setCursor(0,0);
     lcd.print("Congrats ! Click");
     lcd.setCursor(0,1);
-    lcd.print("to exit !");
+    lcd.print("to exit !       ");
     // reading button
     buttonClick = analogRead(joyPinClick); // I know it is supposed to be digital, I am supposed to use button pushdown, use a resistor, and make things complicated for the sake of eficiency :)) Sorry :D
-    if(buttonClick < 50){
+    if(buttonClick < 30){
       isClicked = 1;  
-    }else{
+    }else if(buttonClick > 100){
       isClicked = 0;
     }
     // check exit condition
@@ -62,19 +66,74 @@ void startGame(int level){
   }
 }
 
-void settings(){
-  
+void settings(int &level){
+  wasClicked = 1;
+  while(1){
+    lcd.setCursor(0,0);
+    lcd.print("Starting level: ");
+    lcd.setCursor(0,1);
+    lcd.print(level);
+    lcd.print("               ");
+    coordonateX = analogRead(joyPinX);
+    coordonateY = analogRead(joyPinY);
+      
+    if((coordonateX > 850) && (stateX == 1)){
+      if(level < maxLevel){
+        level++;
+      }
+      stateX = 0;
+    }
+    if((coordonateX < 100) && (stateX == 1)){
+      if(level > 1){
+        level--;
+      }
+      stateX = 0;
+    }
+    if((coordonateX > 99) && (coordonateX < 851)){
+      stateX = 1;
+    }
+    buttonClick = analogRead(joyPinClick); // I know it is supposed to be digital, I am supposed to use button pushdown, use a resistor, and make things complicated for the sake of eficiency :)) Sorry :D
+    if(buttonClick < 30){
+      isClicked = 1;  
+    }else if(buttonClick > 100){
+      isClicked = 0;
+    }
+    if((isClicked == 1) && (wasClicked == 0)){
+      break;
+    }
+    wasClicked = isClicked;
+  }
 }
-void highScore(){
-  
+
+void highScore(int maxScore){
+  wasClicked = 1;
+  while(1){
+    lcd.setCursor(0,0);
+    lcd.print("    ");
+    lcd.print(maxScore);
+    lcd.print("           ");
+    lcd.setCursor(0,1);
+    lcd.print("                ");
+    buttonClick = analogRead(joyPinClick); // I know it is supposed to be digital, I am supposed to use button pushdown, use a resistor, and make things complicated for the sake of eficiency :)) Sorry :D
+    if(buttonClick < 30){
+      isClicked = 1;  
+    }else if(buttonClick > 100){
+      isClicked = 0;
+    }
+    if((isClicked == 1) && (wasClicked == 0)){
+      break;
+    }
+    wasClicked = isClicked;
+  }
 }
+
 void selectMenu(int n){
   if (n == 1){
-    startGame(level);
+    startGame(level, maxScore);
   }else if(n == 2){
-    settings();
+    settings(level);
   }else{
-    highScore();
+    highScore(maxScore);
   }
 }
 
@@ -121,16 +180,15 @@ void loop(){
       }else{
         lcd.print("   High score   ");
       }
-      delay(1);
     }
   // Selecting the menu
     
     coordonateX = analogRead(joyPinX);
     coordonateY = analogRead(joyPinY);
     buttonClick = analogRead(joyPinClick); // I know it is supposed to be digital, I am supposed to use button pushdown, use a resistor, and make things complicated for the sake of eficiency :)) Sorry :D
-    if(buttonClick < 50){
+    if(buttonClick < 30){
       isClicked = 1;  
-    }else{
+    }else if(buttonClick > 100){
       isClicked = 0;
     }
   
