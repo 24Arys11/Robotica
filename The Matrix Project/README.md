@@ -1,5 +1,5 @@
-#Matrix Project.
+# Matrix Project.
 
-##Bomberman Game !
+## Bomberman Game !
 
 Documentation in progress...
