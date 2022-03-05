@@ -13,7 +13,7 @@ However, it lacked in-game sound and the item functionality (non-essential, but 
 
 I was planning to record the gameplay after fixing these ishues, but I haven't found the time. Later, after the pandemic striked and I returned to my home city, I wanted to finish the project, but a malfunction caused during transportation appeared. I realised it was possible, but difficult to fix the problem and I decided to start over and build the project in a better, more modular way, such that any component could be easily replaced should a malfunction appear again. Thus I could not take the final footage and I did not finish the documentation for this version. :(
 
-------
+-----------
 
 ## Bomberman (THE CURRENT VERSION) - SPOILER: IT'S AWESOME !!!
 
