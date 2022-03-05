@@ -2,11 +2,11 @@
 
 ## Bomberman Game !
 
-Short video-documentation (2 min):
+Short video - documentation (2 min):
 https://youtu.be/wZcfJnbsGgI
 
+Short video - menu presentation (3 min):
+https://www.youtube.com/watch?v=C2Ci4uytHbY
 
-The link contains the code for the game, videos, photos, ppt presentation, docs and pdfs.
-https://drive.google.com/open?id=18wODDoPD4BQGDOe9LPiEhpzHCwBkYEkX
 
 Documentation in progress...
