@@ -17,3 +17,22 @@ I was planning to record the gameplay after fixing these ishues, but I haven't f
 
 ## Bomberman (THE CURRENT VERSION) - SPOILER: IT'S AWESOME !!!
 
+### PCB Layout - [pdf (2 pages)](https://github.com/24Arys11/Robotica/blob/master/The%20Matrix%20Project/Current%20Version/docs/PCBs.pdf)
+
+### Menu - [pdf (1 page)](https://github.com/24Arys11/Robotica/blob/master/The%20Matrix%20Project/Current%20Version/docs/Menu.pdf)
+
+### Levels - [pdf (1 page)](https://github.com/24Arys11/Robotica/blob/master/The%20Matrix%20Project/Current%20Version/docs/levels.pdf)
+
+### Character animations - [pdf (1 page)](https://github.com/24Arys11/Robotica/blob/master/The%20Matrix%20Project/Current%20Version/docs/animations.pdf)
+
+### Construction insights - [short video (2 min)](https://youtu.be/aUcalQiRNsg)
+
+### Wellcome screen - [short video (29 sec)](https://youtu.be/PIbAACZ1w9Q)
+
+### Menu presentation - [short video (5 min)](https://youtu.be/3MC6CFNlwqA)
+
+### Credits animation - [short video (39 sec)](https://youtu.be/r5yEWpp2Rvw)
+
+### Gameplay 1 - [short video (3 min)](https://youtu.be/_2kjGHCBAJk)
+
+### Gameplay 2 - [short video (4 min)](https://youtu.be/AhGbZA6XfVw)
