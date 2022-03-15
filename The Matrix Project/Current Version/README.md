@@ -10,6 +10,8 @@
 
 ### Character animations - [pdf (1 page)](https://github.com/24Arys11/Robotica/blob/master/The%20Matrix%20Project/Current%20Version/docs/animations.pdf)
 
+### Construction insights - [short video (2 min)](https://youtu.be/aUcalQiRNsg)
+
 ### Wellcome screen - [short video (29 sec)](https://youtu.be/PIbAACZ1w9Q)
 
 ### Menu presentation - [short video (5 min)](https://youtu.be/3MC6CFNlwqA)
