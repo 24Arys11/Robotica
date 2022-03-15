@@ -21,3 +21,7 @@
 ### Gameplay 1 - [short video (3 min)](https://youtu.be/_2kjGHCBAJk)
 
 ### Gameplay 2 - [short video (4 min)](https://youtu.be/AhGbZA6XfVw)
+
+### Neat things:
+* Sound system could play up to 30 songs (sound effects, mellodies, ...) simultaneously ! Only the sound with the highest priority (or the most recent if priorities are equal) will be heard, however, a background song will continue after the top song finishes. Thus, songs can interrupt each other dynamically.
+* Matrix Manager renders every position (set of 4 leds) individually, each having it's own refresh rate. Thus the game displays very efficiently and is able to run smoothly.
